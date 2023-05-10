@@ -1,5 +1,7 @@
 package ar.edu.unlam.dominio.EmpresaDeCursos;
 
-public class Profesor {
+public class Profesor extends Persona {
+
+
 
 }

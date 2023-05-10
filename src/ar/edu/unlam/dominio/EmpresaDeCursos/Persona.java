@@ -1,6 +1,6 @@
 package ar.edu.unlam.dominio.EmpresaDeCursos;
 
-public class Persona {
+public abstract class Persona {
 
 	    private String nombre;
 	    private String apellido;
@@ -12,14 +12,16 @@ public class Persona {
 
 
 
-	public Persona() {
-
+	public Persona(String nombre, String apellido) {
+		this.nombre=nombre; 
+		this.apellido = apellido;
 	}
 
 
 
 	public Persona(String nombre, String apellido, Integer dni, String email, String telefono) {
-	    this.apellido = apellido;
+	    this.nombre=nombre;
+		this.apellido = apellido;
 	    this.dni = dni;
 	    this.email = email;
 	    this.telefono = telefono;
