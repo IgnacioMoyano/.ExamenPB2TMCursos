@@ -24,7 +24,7 @@ public class Alumno extends Persona {
 
 	public void condicion(Integer notaPrimerParcial, Integer notaSegundoParcial) {
 
-		if (notaPrimerParcial >= 7 && notaSegundoParcial >= 7 && asistencias >= 7) {
+		if (notaPrimerParcial >= 7 && notaSegundoParcial >= 7) {
 			setCondicion(condicion.APROBADO);
 		}
 		if (notaPrimerParcial < 4 || notaSegundoParcial < 4) {
@@ -39,9 +39,6 @@ public class Alumno extends Persona {
 		}
 	}
 
-	public boolean asistenciasCorrectas(Integer asistencias) {
-		return asistencias >= 0.7 * TOTAL_ASISTENCIAS;
-	}
 
 	public Integer getNotaPrimerParcial() {
 		return notaPrimerParcial;

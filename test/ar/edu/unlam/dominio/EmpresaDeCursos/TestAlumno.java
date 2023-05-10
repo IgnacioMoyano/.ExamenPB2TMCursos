@@ -169,9 +169,7 @@ public class TestAlumno {
 			alumno.validarYAgregarEmail(email);
 			alumno.validarYAgregarTelefono(telefono);
 	        
-			boolean asistenciasMinimaParaAprobar=true;
-			assertEquals(asistenciasMinimaParaAprobar, alumno.asistenciasCorrectas(asistencias));
-
+			
 	        
 	    }
 }

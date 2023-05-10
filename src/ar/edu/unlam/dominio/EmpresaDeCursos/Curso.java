@@ -16,9 +16,9 @@ public class Curso {
 	private ArrayList<Alumno> alumnos;
 	private Profesor profesor;
 	private TipoCurso tipoCurso;
-	private Integer duracion;
 	private Integer precio;
 	private String codigoCurso;
+	private Integer clases;
 
 	public Curso(TipoCurso tipoCurso) {
 		this.alumnos = new ArrayList<>();
@@ -51,21 +51,21 @@ public class Curso {
 		return alumnos.size();
 	}
 
-	public void duracionSegunTipoCurso() {
-		Integer duracionHtml = 100;
-		Integer duracionCss = 150;
-		Integer duracionJava = 200;
+	public void clasesSegunTipoCurso() {
+		Integer clasesHtml = 10;
+		Integer clasesCss = 15;
+		Integer clasesJava = 20;
 
 		if (getTipoCurso() == TipoCurso.HTML) {
-			setDuracion(duracionHtml);
+			setClases(clasesHtml);
 		}
 
 		if (getTipoCurso() == TipoCurso.CSS) {
-			setDuracion(duracionCss);
+			setClases(clasesCss);
 		}
 
 		if (getTipoCurso() == TipoCurso.JAVA) {
-			setDuracion(duracionJava);
+			setClases(clasesJava);
 		}
 
 	}
@@ -114,12 +114,12 @@ public class Curso {
 		this.tipoCurso = tipoCurso;
 	}
 
-	public Integer getDuracion() {
-		return duracion;
+	public Integer getClases() {
+		return clases;
 	}
 
-	public void setDuracion(Integer duracion) {
-		this.duracion = duracion;
+	public void setClases(Integer clases) {
+		this.clases = clases;
 	}
 
 	public Integer getPrecio() {
