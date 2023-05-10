@@ -13,15 +13,21 @@ public abstract class Persona {
 	}
 
 	public Persona(String nombre, String apellido, Integer dni, String email, String telefono) {
+
+		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
 		this.email = email;
 		this.telefono = telefono;
+
 	}
 
 	public Persona(String nombre2, String apellido2) {
+
 		this.nombre=nombre2;
 		this.apellido=apellido2;
+
+
 	}
 
 	public String getNombre() {
