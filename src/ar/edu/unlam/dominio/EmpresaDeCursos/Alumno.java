@@ -6,17 +6,18 @@ import java.util.Set;
 public class Alumno extends Persona {
 	private Integer notaPrimerParcial;
 	private Integer notaSegundoParcial;
-	private LocalDate edad;
+	private LocalDate fechaDeNacimiento;
 	private CondicionNota condicion;
+	private Integer asistencias;
 
 	public Alumno(String nombre, String apellido, LocalDate edad) {
 		super(nombre, apellido);
-		this.edad = edad;
+		this.fechaDeNacimiento = edad;
 	}
 
 	public void condicion(Integer notaPrimerParcial, Integer notaSegundoParcial) {
 
-		if (notaPrimerParcial >= 7 && notaSegundoParcial >= 7) {
+		if (notaPrimerParcial >= 7 && notaSegundoParcial >= 7 && asistencias>=7) {
 			setCondicion(condicion.APROBADO);
 		}
 		if (notaPrimerParcial < 4 || notaSegundoParcial < 4) {
@@ -31,8 +32,22 @@ public class Alumno extends Persona {
 		}
 	}
 
+	public boolean asistenciasCorrectas(Integer asistencias) {
+		return asistencias >= 0.7 * TOTAL_ASISTENCIAS;
+}
+	
+	
+	
 	public Integer getNotaPrimerParcial() {
 		return notaPrimerParcial;
+	}
+	
+	public Integer getAsistencias() {
+		return asistencias;
+	}
+
+	public void setAsistencias(Integer asistencias) {
+		this.asistencias = asistencias;
 	}
 
 	public void setNotaPrimerParcial(Integer notaPrimerParcial) {
@@ -56,11 +71,11 @@ public class Alumno extends Persona {
 	}
 
 	public LocalDate getEdad() {
-		return edad;
+		return fechaDeNacimiento;
 	}
 
 	public void setEdad(LocalDate edad) {
-		this.edad = edad;
+		this.fechaDeNacimiento = edad;
 	}
 
 }
