@@ -55,30 +55,23 @@ public class TestCurso {
 
 	@Test
 	public void queSePuedaAñadirMasDeUnAlumno() {
-		final String nombre;
-		final String apellido;
-		final Integer dni;
-		final String email;
-		final String telefono;
 		final LocalDate fechaNacimiento;
-
 		Integer cantidadDeAlumnosEsperados;
 		final TipoCurso tipoCurso;
 		Alumno alumno;
 		Curso curso;
 
-		nombre = "Sebastian";
-		apellido = "Villa";
-		dni = 40402722;
-		email = "ElAlumnoVilla@gmail.com";
-		telefono = "+541128341522";
 		fechaNacimiento = LocalDate.of(1996, 5, 19);
-
 		cantidadDeAlumnosEsperados = 4;
 		tipoCurso = TipoCurso.HTML;
+		curso = new Curso(tipoCurso);
+
+		Integer datosAux = 0;
 
 		for (int i = 0; i < 4; i++) {
-			alumno = new Alumno(i, i, i, i, i, fechaNacimiento);
+			datosAux++;
+			alumno = new Alumno(datosAux.toString(), datosAux.toString(), datosAux, datosAux.toString(),
+					datosAux.toString(), fechaNacimiento);
 			curso.añadirAlumnos(alumno, tipoCurso);
 		}
 
@@ -312,32 +305,25 @@ public class TestCurso {
 
 	@Test
 	public void queNoSePuedanAgregarMasDeDiezPersonasAUnCurso() {
-		final String nombre;
-		final String apellido;
-		final Integer dni;
-		final String email;
-		final String telefono;
+
 		final LocalDate fechaNacimiento;
 		Integer cantidadDeAlumnosEsperados;
 		final TipoCurso tipoCurso;
 		Alumno alumno;
 		Curso curso;
-
-		nombre = "Sebastian";
-		apellido = "Villa";
-		dni = 40402722;
-		email = "ElAlumnoVilla@gmail.com";
-		telefono = "+541128341522";
+		
+		
 		fechaNacimiento = LocalDate.of(1996, 5, 19);
-
 		cantidadDeAlumnosEsperados = 10;
 		tipoCurso = TipoCurso.HTML;
-
 		curso = new Curso(tipoCurso);
-
+		
+		Integer datosAux = 0;
 		// Intenta agregar 11 alumnos
-		for (int i = 0; i < 11; i++) {
-			alumno = new Alumno(i, i, i, i, i, fechaNacimiento);
+		for (int i = 0; i < 4; i++) {
+			datosAux++;
+			alumno = new Alumno(datosAux.toString(), datosAux.toString(), datosAux, datosAux.toString(),
+					datosAux.toString(), fechaNacimiento);
 			curso.añadirAlumnos(alumno, tipoCurso);
 		}
 
