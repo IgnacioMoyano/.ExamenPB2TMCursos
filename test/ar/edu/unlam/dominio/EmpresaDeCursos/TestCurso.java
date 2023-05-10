@@ -46,7 +46,7 @@ public class TestCurso {
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
-		alumno.vaidarYAgregarTelefono(telefono);
+		alumno.validarYAgregarTelefono(telefono);
 
 		curso.añadirAlumnos(alumno, tipoCurso);
 
@@ -113,7 +113,7 @@ public class TestCurso {
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
-		alumno.vaidarYAgregarTelefono(telefono);
+		alumno.validarYAgregarTelefono(telefono);
 
 		curso.añadirAlumnos(alumno, tipoCurso);
 
@@ -148,7 +148,7 @@ public class TestCurso {
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
-		alumno.vaidarYAgregarTelefono(telefono);
+		alumno.validarTelefono(telefono);
 
 		curso.añadirAlumnos(alumno, tipoCurso);
 
@@ -183,7 +183,7 @@ public class TestCurso {
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
-		alumno.vaidarYAgregarTelefono(telefono);
+		alumno.validarTelefono(telefono);
 
 		curso.añadirAlumnos(alumno, tipoCurso);
 
@@ -213,7 +213,7 @@ public class TestCurso {
 
 		profesor.validarYAgregarDni(dni);
 		profesor.validarYAgregarEmail(email);
-		profesor.vaidarYAgregarTelefono(telefono);
+		profesor.validarTelefono(telefono);
 
 		curso.añadirProfesor(profesor);
 
@@ -243,7 +243,7 @@ public class TestCurso {
 
 		profesor.validarYAgregarDni(dni);
 		profesor.validarYAgregarEmail(email);
-		profesor.vaidarYAgregarTelefono(telefono);
+		profesor.validarTelefono(telefono);
 
 		curso.añadirProfesor(profesor);
 
@@ -273,7 +273,7 @@ public class TestCurso {
 
 		profesor.validarYAgregarDni(dni);
 		profesor.validarYAgregarEmail(email);
-		profesor.vaidarYAgregarTelefono(telefono);
+		profesor.validarTelefono(telefono);
 
 		curso.añadirProfesor(profesor);
 
@@ -303,7 +303,7 @@ public class TestCurso {
 
 		profesor.validarYAgregarDni(dni);
 		profesor.validarYAgregarEmail(email);
-		profesor.vaidarYAgregarTelefono(telefono);
+		profesor.validarTelefono(telefono);
 
 		curso.añadirProfesor(profesor);
 

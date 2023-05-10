@@ -28,7 +28,7 @@ public class Curso {
 	public void añadirProfesor(Profesor profesor) {
 
 		if (profesor.getNombre() != null && profesor.getApellido() != null && profesor.getDni() != null
-				&& profesor.getEmail() != null && profesor.getTelefeno() != null) {
+				&& profesor.getEmail() != null && profesor.getTelefono() != null) {
 			setProfesor(profesor);
 		}
 
@@ -38,7 +38,7 @@ public class Curso {
 		Integer capacidadMaximaPersonas = 10;
 
 		if (alumno.getNombre() != null && alumno.getApellido() != null && alumno.getDni() != null
-				&& alumno.getEmail() != null && alumno.getTelefeno() != null) {
+				&& alumno.getEmail() != null && alumno.getTelefono() != null) {
 			if (edadRequeridaParaCursar(alumno, tipoCurso)) {
 				if (alumnos.size() < capacidadMaximaPersonas) {
 					alumnos.add(alumno);
