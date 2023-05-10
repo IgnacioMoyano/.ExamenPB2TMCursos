@@ -6,12 +6,12 @@ import java.util.Set;
 public class Alumno extends Persona {
 	private Integer notaPrimerParcial;
 	private Integer notaSegundoParcial;
-	private LocalDate edad;
+	private LocalDate fechaDeNacimiento;
 	private CondicionNota condicion;
 
 	public Alumno(String nombre, String apellido, LocalDate edad) {
 		super(nombre, apellido);
-		this.edad = edad;
+		this.fechaDeNacimiento = edad;
 	}
 
 	public void condicion(Integer notaPrimerParcial, Integer notaSegundoParcial) {
@@ -55,12 +55,22 @@ public class Alumno extends Persona {
 		this.condicion = condicion;
 	}
 
-	public LocalDate getEdad() {
+	public Integer getEdad() {
+		
+		LocalDate fechaActual = LocalDate.now();
+		Integer edad;
+		
+		edad =  fechaActual.getYear() - this.fechaDeNacimiento.getYear();
+		
+		if (fechaDeNacimiento.getDayOfYear() < fechaActual.getDayOfYear()) {
+			edad--;
+		}
+		
 		return edad;
 	}
 
 	public void setEdad(LocalDate edad) {
-		this.edad = edad;
+		this.fechaDeNacimiento = edad;
 	}
 
 }
