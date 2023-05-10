@@ -326,7 +326,7 @@ public class TestCurso {
 			curso.añadirAlumnos(alumno, tipoCurso);
 		}
 
-		// comprueba que el ultimo alumno no se agrega xq no hay mas tamaño
+		// Comprueba que el ultimo alumno no se agrega xq no hay mas tamaño
 		assertEquals(cantidadDeAlumnosEsperados, curso.cantidadAlumnos());
 	}
 
