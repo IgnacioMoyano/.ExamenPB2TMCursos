@@ -73,7 +73,6 @@ public class Curso {
 	public boolean edadRequeridaParaCursar(Alumno alumno, TipoCurso tipoCurso) {
 
 		boolean validado = false;
-		TipoCurso tipoCursoParam = tipoCurso;
 
 		if (tipoCurso == TipoCurso.HTML && alumno.getEdad() > EDAD_MINIMA_HTML && alumno.getEdad() < EDAD_MAXIMA_HTML) {
 			validado = true;

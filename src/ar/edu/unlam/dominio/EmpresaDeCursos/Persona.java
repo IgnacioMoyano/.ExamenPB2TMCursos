@@ -23,8 +23,11 @@ public abstract class Persona {
 	}
 
 	public Persona(String nombre2, String apellido2) {
-		this.nombre = nombre2;
-		this.apellido = apellido2;
+
+		this.nombre=nombre2;
+		this.apellido=apellido2;
+
+
 	}
 
 	public String getNombre() {

@@ -59,6 +59,20 @@ public class Alumno extends Persona {
 		this.condicion = condicion;
 	}
 
+	public Integer getEdad() {
+		
+		LocalDate fechaActual = LocalDate.now();
+		Integer edad;
+		
+		edad =  fechaActual.getYear() - this.fechaDeNacimiento.getYear();
+		
+		if (fechaDeNacimiento.getDayOfYear() < fechaActual.getDayOfYear()) {
+			edad--;
+		}
+		
+		return edad;
+	}
+
 	public void setEdad(LocalDate edad) {
 		this.fechaDeNacimiento = edad;
 	}

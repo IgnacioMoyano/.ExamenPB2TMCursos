@@ -69,9 +69,9 @@ public class TestCurso {
 		Integer datosAux = 0;
 
 		for (int i = 0; i < 4; i++) {
-			datosAux++;
 			alumno = new Alumno(datosAux.toString(), datosAux.toString(), datosAux, datosAux.toString(),
 					datosAux.toString(), fechaNacimiento);
+			datosAux++;
 			curso.añadirAlumnos(alumno, tipoCurso);
 		}
 
@@ -206,7 +206,7 @@ public class TestCurso {
 
 		profesor.validarYAgregarDni(dni);
 		profesor.validarYAgregarEmail(email);
-		profesor.validarTelefono(telefono);
+		profesor.validarYAgregarTelefono(telefono);
 
 		curso.añadirProfesor(profesor);
 
@@ -311,16 +311,15 @@ public class TestCurso {
 		final TipoCurso tipoCurso;
 		Alumno alumno;
 		Curso curso;
-		
-		
+
 		fechaNacimiento = LocalDate.of(1996, 5, 19);
 		cantidadDeAlumnosEsperados = 10;
 		tipoCurso = TipoCurso.HTML;
 		curso = new Curso(tipoCurso);
-		
+
 		Integer datosAux = 0;
 		// Intenta agregar 11 alumnos
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 11; i++) {
 			datosAux++;
 			alumno = new Alumno(datosAux.toString(), datosAux.toString(), datosAux, datosAux.toString(),
 					datosAux.toString(), fechaNacimiento);
