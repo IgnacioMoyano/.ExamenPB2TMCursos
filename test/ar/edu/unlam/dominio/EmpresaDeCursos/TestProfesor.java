@@ -17,7 +17,7 @@ public class TestProfesor {
 
 		nombre = "Jorge";
 		apellido = "Almiron";
-		dni = 202062955;
+		dni = 20206295;
 		email = "ElProfeAlmiron@gmail.com";
 		telefono = "+541128341574";
 
@@ -125,7 +125,7 @@ public class TestProfesor {
 		assertNull(emailProfesor);
 
 	}
-	
+
 	@Test
 	public void QueNoSePuedaAgregarUnEmailSiNoTerminaEnPuntoCom() {
 
@@ -158,7 +158,7 @@ public class TestProfesor {
 		assertNull(emailProfesor);
 
 	}
-	
+
 	@Test
 	public void QueSePuedaAgregarUnEmailSiContieneArrobaYTerminaEnPuntoCom() {
 
@@ -191,7 +191,7 @@ public class TestProfesor {
 		assertEquals(emailEsperado, emailProfesor);
 
 	}
-	
+
 	@Test
 	public void QueNoSePuedaAgregarUnTelefonoSiNoContieneCodigoDeAreaMasCincuentaYCuatro() {
 
@@ -224,7 +224,7 @@ public class TestProfesor {
 		assertNull(telefonoProfesor);
 
 	}
-	
+
 	@Test
 	public void QueNoSePuedaAgregarUnTelefonoSiNoTieneTreceNumerosDeLargo() {
 
@@ -290,5 +290,5 @@ public class TestProfesor {
 		assertEquals(telefonoEsperado, telefonoProfesor);
 
 	}
-	
+
 }
