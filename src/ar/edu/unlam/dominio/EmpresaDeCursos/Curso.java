@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Curso {
 
+	private final static Integer CLASESHTML = 10;
+	private final static Integer CLASESCSS = 15;
+	private final static Integer CLASESJAVA = 20;
+	
 	private final Integer EDAD_MINIMA_HTML = 15;
 	private final Integer EDAD_MAXIMA_HTML = 30;
 
@@ -23,6 +27,18 @@ public class Curso {
 	public Curso(TipoCurso tipoCurso) {
 		this.alumnos = new ArrayList<>();
 		this.tipoCurso = tipoCurso;
+		if (getTipoCurso() == TipoCurso.HTML) {
+			setClases(CLASESHTML);
+		}
+
+		if (getTipoCurso() == TipoCurso.CSS) {
+			setClases(CLASESCSS);
+		}
+
+		if (getTipoCurso() == TipoCurso.JAVA) {
+			setClases(CLASESJAVA);
+		}
+
 	}
 
 	public void añadirProfesor(Profesor profesor) {
@@ -52,22 +68,9 @@ public class Curso {
 	}
 
 	public void clasesSegunTipoCurso() {
-		Integer clasesHtml = 10;
-		Integer clasesCss = 15;
-		Integer clasesJava = 20;
+		
 
-		if (getTipoCurso() == TipoCurso.HTML) {
-			setClases(clasesHtml);
-		}
-
-		if (getTipoCurso() == TipoCurso.CSS) {
-			setClases(clasesCss);
-		}
-
-		if (getTipoCurso() == TipoCurso.JAVA) {
-			setClases(clasesJava);
-		}
-
+		
 	}
 
 	public boolean edadRequeridaParaCursar(Alumno alumno, TipoCurso tipoCurso) {

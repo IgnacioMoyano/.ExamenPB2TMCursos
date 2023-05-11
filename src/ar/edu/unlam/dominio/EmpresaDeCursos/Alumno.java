@@ -9,6 +9,7 @@ public class Alumno extends Persona {
 	private CondicionNota condicion;
 	private Integer asistencias;
 
+	
 	public Alumno(String nombre, String apellido, LocalDate edad) {
 		super(nombre, apellido);
 		this.fechaDeNacimiento = edad;
@@ -22,19 +23,22 @@ public class Alumno extends Persona {
 
 	}
 
-	public void condicion(Integer notaPrimerParcial, Integer notaSegundoParcial) {
+	public void condicion(Alumno alumno,Curso curso) {
 
-		if (notaPrimerParcial >= 7 && notaSegundoParcial >= 7) {
+		
+		
+		
+		if (alumno.getNotaPrimerParcial() >= 7 && alumno.getNotaSegundoParcial() >= 7 && validarCantidadDeAsistencias(alumno, curso)) {
 			setCondicion(condicion.APROBADO);
 		}
-		if (notaPrimerParcial < 4 || notaSegundoParcial < 4) {
+		if (alumno.getNotaPrimerParcial() < 4 || alumno.getNotaSegundoParcial() < 4 || validarCantidadDeAsistencias(alumno, curso)==false) {
 			setCondicion(condicion.DESAPROBADO);
 		}
-		if (notaPrimerParcial >= 7 && notaSegundoParcial >= 4 && notaSegundoParcial < 7) {
+		if (alumno.getNotaPrimerParcial() >= 4 && alumno.getNotaSegundoParcial() >= 4 && alumno.getNotaSegundoParcial() < 7 && validarCantidadDeAsistencias(alumno, curso)) {
 			setCondicion(condicion.FINAL);
 		}
 
-		if (notaPrimerParcial >= 4 && notaSegundoParcial >= 7 && notaPrimerParcial < 7) {
+		if (alumno.getNotaPrimerParcial() >= 4 && alumno.getNotaPrimerParcial() < 7 && alumno.getNotaSegundoParcial() >= 4 && validarCantidadDeAsistencias(alumno, curso)) {
 			setCondicion(condicion.FINAL);
 		}
 	}
@@ -85,6 +89,13 @@ public class Alumno extends Persona {
 
 		return edad;
 
+	}
+	
+	public Boolean validarCantidadDeAsistencias(Alumno alumno, Curso curso) {
+		 if (alumno.getAsistencias() >= curso.getClases() * 0.7) {
+			 return true;
+		 }
+		return false;
 	}
 
 	public void setEdad(LocalDate edad) {

@@ -7,7 +7,8 @@ public abstract class Persona {
 	private Integer dni;
 	private String email;
 	private String telefono;
-
+	private Curso curso;
+	
 	public Persona() {
 
 	}

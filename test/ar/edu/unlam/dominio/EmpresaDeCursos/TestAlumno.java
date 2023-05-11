@@ -142,7 +142,7 @@ public class TestAlumno {
 
 		
 		CondicionNota condicionEsperada= CondicionNota.FINAL;
-		alumno.condicion(notaPrimerParcial,notaSegundoParcial);
+		alumno.condicion(alumno);
 		assertEquals(condicionEsperada,alumno.getCondicion() );
 		
 	
@@ -163,13 +163,20 @@ public class TestAlumno {
 			Integer asistencias=7;
 			LocalDate edad= LocalDate.of(1994,04, 3) ;
 			
+			final TipoCurso tipoCurso;
+			tipoCurso = TipoCurso.HTML;
+			
 			alumno= new Alumno(nombre, apellido, edad);
 			
 			alumno.validarYAgregarDni(dni);
 			alumno.validarYAgregarEmail(email);
 			alumno.validarYAgregarTelefono(telefono);
 	        
+			alumno.setAsistencias(asistencias);
 			
-	        
+			Curso curso = new Curso(tipoCurso);
+		
+	      assertTrue(alumno.validarCantidadDeAsistencias(alumno,curso));
+			
 	    }
 }
