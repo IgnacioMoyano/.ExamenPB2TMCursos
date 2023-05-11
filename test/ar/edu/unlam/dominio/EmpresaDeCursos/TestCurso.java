@@ -9,13 +9,13 @@ import org.junit.Test;
 public class TestCurso {
 
 	@Test
-	public void queSePuedaCrearUnCurso() {
-		final TipoCurso tipoCurso = TipoCurso.HTML;
-		Curso curso;
+	public void queSePuedaCrearUnCursoHTML() {
 
-		curso = new Curso(tipoCurso);
+		CursoHtml html;
 
-		assertNotNull(curso);
+		html = new CursoHtml();
+
+		assertNotNull(html);
 	}
 
 	@Test

@@ -2,43 +2,16 @@ package ar.edu.unlam.dominio.EmpresaDeCursos;
 
 import java.util.ArrayList;
 
-public class Curso {
-
-	private final static Integer CLASESHTML = 10;
-	private final static Integer CLASESCSS = 15;
-	private final static Integer CLASESJAVA = 20;
-	
-	private final Integer EDAD_MINIMA_HTML = 15;
-	private final Integer EDAD_MAXIMA_HTML = 30;
-
-	private final Integer EDAD_MINIMA_CSS = 18;
-	private final Integer EDAD_MAXIMA_CSS = 35;
-
-	private final Integer EDAD_MINIMA_JAVA = 20;
-	private final Integer EDAD_MAXIMA_JAVA = 40;
+public abstract class Curso {
 
 	private ArrayList<Alumno> alumnos;
 	private Profesor profesor;
-	private TipoCurso tipoCurso;
-	private Integer precio;
+	protected Integer precio;
 	private String codigoCurso;
-	private Integer clases;
+	protected Integer clases;
 
-	public Curso(TipoCurso tipoCurso) {
+	public Curso() {
 		this.alumnos = new ArrayList<>();
-		this.tipoCurso = tipoCurso;
-		if (getTipoCurso() == TipoCurso.HTML) {
-			setClases(CLASESHTML);
-		}
-
-		if (getTipoCurso() == TipoCurso.CSS) {
-			setClases(CLASESCSS);
-		}
-
-		if (getTipoCurso() == TipoCurso.JAVA) {
-			setClases(CLASESJAVA);
-		}
-
 	}
 
 	public void añadirProfesor(Profesor profesor) {
@@ -50,12 +23,12 @@ public class Curso {
 
 	}
 
-	public void añadirAlumnos(Alumno alumno, TipoCurso tipoCurso) {
+	public void añadirAlumnos(Alumno alumno) {
 		Integer capacidadMaximaPersonas = 10;
 
 		if (alumno.getNombre() != null && alumno.getApellido() != null && alumno.getDni() != null
 				&& alumno.getEmail() != null && alumno.getTelefono() != null) {
-			if (edadRequeridaParaCursar(alumno, tipoCurso)) {
+			if (edadRequeridaParaCursar(alumno)) {
 				if (alumnos.size() < capacidadMaximaPersonas) {
 					alumnos.add(alumno);
 				}
@@ -67,31 +40,7 @@ public class Curso {
 		return alumnos.size();
 	}
 
-	public void clasesSegunTipoCurso() {
-		
-
-		
-	}
-
-	public boolean edadRequeridaParaCursar(Alumno alumno, TipoCurso tipoCurso) {
-
-		boolean validado = false;
-
-		if (tipoCurso == TipoCurso.HTML && alumno.getEdad() > EDAD_MINIMA_HTML && alumno.getEdad() < EDAD_MAXIMA_HTML) {
-			validado = true;
-		}
-
-		if (tipoCurso == TipoCurso.CSS && alumno.getEdad() > EDAD_MINIMA_CSS && alumno.getEdad() < EDAD_MAXIMA_CSS) {
-			validado = true;
-		}
-
-		if (tipoCurso == TipoCurso.JAVA && alumno.getEdad() > EDAD_MINIMA_JAVA && alumno.getEdad() < EDAD_MAXIMA_JAVA) {
-			validado = true;
-		}
-
-		return validado;
-
-	}
+	public abstract boolean edadRequeridaParaCursar(Alumno alumno);
 
 	public ArrayList<Alumno> getAlumnos() {
 		return alumnos;
@@ -107,14 +56,6 @@ public class Curso {
 
 	public void setProfesor(Profesor profesor) {
 		this.profesor = profesor;
-	}
-
-	public TipoCurso getTipoCurso() {
-		return tipoCurso;
-	}
-
-	public void setTipoCurso(TipoCurso tipoCurso) {
-		this.tipoCurso = tipoCurso;
 	}
 
 	public Integer getClases() {
