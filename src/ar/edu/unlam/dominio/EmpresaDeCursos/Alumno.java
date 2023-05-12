@@ -21,23 +21,23 @@ public class Alumno extends Persona {
 
 	}
 
-	public void condicion(Alumno alumno, Curso curso) {
+	public void condicion(Curso curso) {
 
-		if (alumno.getNotaPrimerParcial() >= 7 && alumno.getNotaSegundoParcial() >= 7
-				&& validarCantidadDeAsistencias(alumno, curso)) {
+		if (this.getNotaPrimerParcial() >= 7 && this.getNotaSegundoParcial() >= 7
+				&& validarCantidadDeAsistencias(curso)) {
 			setCondicion(condicion.APROBADO);
 		}
-		if (alumno.getNotaPrimerParcial() < 4 || alumno.getNotaSegundoParcial() < 4
-				|| validarCantidadDeAsistencias(alumno, curso) == false) {
+		if (this.getNotaPrimerParcial() < 4 || this.getNotaSegundoParcial() < 4
+				|| validarCantidadDeAsistencias(curso) == false) {
 			setCondicion(condicion.DESAPROBADO);
 		}
-		if (alumno.getNotaPrimerParcial() >= 4 && alumno.getNotaSegundoParcial() >= 4
-				&& alumno.getNotaSegundoParcial() < 7 && validarCantidadDeAsistencias(alumno, curso)) {
+		if (this.getNotaPrimerParcial() >= 4 && this.getNotaSegundoParcial() >= 4 && this.getNotaSegundoParcial() < 7
+				&& validarCantidadDeAsistencias(curso)) {
 			setCondicion(condicion.FINAL);
 		}
 
-		if (alumno.getNotaPrimerParcial() >= 4 && alumno.getNotaPrimerParcial() < 7
-				&& alumno.getNotaSegundoParcial() >= 4 && validarCantidadDeAsistencias(alumno, curso)) {
+		if (this.getNotaPrimerParcial() >= 4 && this.getNotaPrimerParcial() < 7 && this.getNotaSegundoParcial() >= 4
+				&& validarCantidadDeAsistencias(curso)) {
 			setCondicion(condicion.FINAL);
 		}
 	}
@@ -89,8 +89,8 @@ public class Alumno extends Persona {
 
 	}
 
-	public Boolean validarCantidadDeAsistencias(Alumno alumno, Curso curso) {
-		if (alumno.getAsistencias() >= curso.getClases() * 0.7) {
+	public Boolean validarCantidadDeAsistencias(Curso curso) {
+		if (this.getAsistencias() >= curso.getClases() * 0.7) {
 			return true;
 		}
 		return false;

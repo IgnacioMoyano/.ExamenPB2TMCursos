@@ -38,16 +38,23 @@ public class TestAlumno {
 		String telefono = "+541123345678";
 		Integer notaPrimerParcial = 8;
 		Integer notaSegundoParcial = 9;
+		Integer asistencias = 11;
 		LocalDate edad = LocalDate.of(1994, 04, 3);
-
+		CondicionNota condicionEsperada = CondicionNota.APROBADO;
+		CursoHtml curso;
 		alumno = new Alumno(nombre, apellido, edad);
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
 		alumno.validarYAgregarTelefono(telefono);
 
-		CondicionNota condicionEsperada = CondicionNota.APROBADO;
-		alumno.condicion(notaPrimerParcial, notaSegundoParcial);
+		alumno.setNotaPrimerParcial(notaPrimerParcial);
+		alumno.setNotaSegundoParcial(notaSegundoParcial);
+		alumno.setAsistencias(asistencias);
+
+		curso = new CursoHtml();
+
+		alumno.condicion(curso);
 		assertEquals(condicionEsperada, alumno.getCondicion());
 
 	}
@@ -63,15 +70,20 @@ public class TestAlumno {
 		Integer notaPrimerParcial = 3;
 		Integer notaSegundoParcial = 2;
 		LocalDate edad = LocalDate.of(1994, 04, 3);
-
+		CondicionNota condicionEsperada = CondicionNota.DESAPROBADO;
+		CursoHtml curso;
 		alumno = new Alumno(nombre, apellido, edad);
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
 		alumno.validarYAgregarTelefono(telefono);
 
-		CondicionNota condicionEsperada = CondicionNota.DESAPROBADO;
-		alumno.condicion(notaPrimerParcial, notaSegundoParcial);
+		alumno.setNotaPrimerParcial(notaPrimerParcial);
+		alumno.setNotaSegundoParcial(notaSegundoParcial);
+
+		curso = new CursoHtml();
+
+		alumno.condicion(curso);
 		assertEquals(condicionEsperada, alumno.getCondicion());
 
 	}
@@ -86,6 +98,7 @@ public class TestAlumno {
 		String telefono = "+541123345678";
 		Integer notaPrimerParcial = 9;
 		Integer notaSegundoParcial = 5;
+		Integer asistencias = 11;
 		LocalDate fechaNacimiento = LocalDate.of(1994, 04, 3);
 
 		nombre = "Nicolas";
@@ -95,14 +108,23 @@ public class TestAlumno {
 		telefono = "+541123345678";
 		fechaNacimiento = LocalDate.of(1994, 04, 3);
 
+		CondicionNota condicionEsperada = CondicionNota.FINAL;
+		CursoHtml curso;
+
 		alumno = new Alumno(nombre, apellido, fechaNacimiento);
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
 		alumno.validarYAgregarTelefono(telefono);
 
-		CondicionNota condicionEsperada = CondicionNota.FINAL;
-		alumno.condicion(notaPrimerParcial, notaSegundoParcial);
+		alumno.setNotaPrimerParcial(notaPrimerParcial);
+		alumno.setNotaSegundoParcial(notaSegundoParcial);
+		alumno.setAsistencias(asistencias);
+
+		curso = new CursoHtml();
+
+		alumno.condicion(curso);
+
 		assertEquals(condicionEsperada, alumno.getCondicion());
 
 	}
@@ -117,16 +139,23 @@ public class TestAlumno {
 		String telefono = "+541123345678";
 		Integer notaPrimerParcial = 4;
 		Integer notaSegundoParcial = 10;
+		Integer asistencias = 11;
 		LocalDate edad = LocalDate.of(1994, 04, 3);
-
+		CursoHtml curso;
 		alumno = new Alumno(nombre, apellido, edad);
 
 		alumno.validarYAgregarDni(dni);
 		alumno.validarYAgregarEmail(email);
 		alumno.validarYAgregarTelefono(telefono);
 
+		alumno.setNotaPrimerParcial(notaPrimerParcial);
+		alumno.setNotaSegundoParcial(notaSegundoParcial);
+		alumno.setAsistencias(asistencias);
 		CondicionNota condicionEsperada = CondicionNota.FINAL;
-		alumno.condicion(alumno);
+
+		curso = new CursoHtml();
+
+		alumno.condicion(curso);
 		assertEquals(condicionEsperada, alumno.getCondicion());
 
 	}
@@ -141,11 +170,9 @@ public class TestAlumno {
 		String telefono = "+541123345678";
 		Integer notaPrimerParcial = 4;
 		Integer notaSegundoParcial = 10;
-		Integer asistencias = 7;
+		Integer asistencias = 11;
 		LocalDate edad = LocalDate.of(1994, 04, 3);
-
-		final TipoCurso tipoCurso;
-		tipoCurso = TipoCurso.HTML;
+		CursoHtml curso;
 
 		alumno = new Alumno(nombre, apellido, edad);
 
@@ -155,9 +182,9 @@ public class TestAlumno {
 
 		alumno.setAsistencias(asistencias);
 
-		Curso curso = new Curso(tipoCurso);
+		curso = new CursoHtml();
 
-		assertTrue(alumno.validarCantidadDeAsistencias(alumno, curso));
+		assertTrue(alumno.validarCantidadDeAsistencias(curso));
 
 	}
 }
