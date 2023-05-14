@@ -5,7 +5,7 @@ public class CursoCss extends Curso {
 	private static final String CODIGO_PARA_CSS = "CSS";
 
 	private static final Integer CANTIDAD_CLASES_CSS = 20;
-	private static final Integer PRECIO_CSS = 1000;
+	private static final Integer PRECIO_CSS = 10000;
 
 	private static final Integer EDAD_MINIMA_CSS = 25;
 	private static final Integer EDAD_MAXIMA_CSS = 40;

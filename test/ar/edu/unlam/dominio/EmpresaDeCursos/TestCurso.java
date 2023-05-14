@@ -12,7 +12,7 @@ public class TestCurso {
 	public void queSePuedaCrearUnCursoHTML() {
 
 		CursoHtml html;
-
+		
 		html = new CursoHtml();
 
 		assertNotNull(html);
@@ -130,7 +130,99 @@ public class TestCurso {
 
 		assertEquals(cantidadDeAlumnosEsperados, cursoJava.cantidadAlumnos());
 	}
+	
+	@Test
+	public void queNoSePuedaAñadirUnAlumnoACursoCSSSinLaEdadNecesaria() {
+		final String nombre;
+		final String apellido;
+		final Integer dni;
+		final String email;
+		final String telefono;
+		final Integer cantidadDeAlumnosEsperados;
+		final LocalDate fechaNacimiento;
+		Alumno alumno;
+		CursoCss cursoCss;
 
+		cantidadDeAlumnosEsperados = 0;
+		nombre = "Sebastian";
+		apellido = "Villa";
+		dni = 40402705;
+		email = "ElAlumnoVilla@gmail.com";
+		telefono = "+541128341522";
+		fechaNacimiento = LocalDate.of(1896, 5, 19);
+		cursoCss = new CursoCss();
+		alumno = new Alumno(nombre, apellido, fechaNacimiento);
+
+		alumno.validarYAgregarDni(dni);
+		alumno.validarYAgregarEmail(email);
+		alumno.validarYAgregarTelefono(telefono);
+
+		cursoCss.añadirAlumnos(alumno);
+
+		assertEquals(cantidadDeAlumnosEsperados, cursoCss.cantidadAlumnos());
+	}
+
+	@Test
+	public void queNoSePuedaAñadirUnAlumnoACursoHtmlSinLaEdadNecesaria() {
+		final String nombre;
+		final String apellido;
+		final Integer dni;
+		final String email;
+		final String telefono;
+		final Integer cantidadDeAlumnosEsperados;
+		final LocalDate fechaNacimiento;
+		Alumno alumno;
+		CursoHtml cursoHtml;
+
+		cantidadDeAlumnosEsperados = 0;
+		nombre = "Sebastian";
+		apellido = "Villa";
+		dni = 40402705;
+		email = "ElAlumnoVilla@gmail.com";
+		telefono = "+541128341522";
+		fechaNacimiento = LocalDate.of(1896, 5, 19);
+		cursoHtml = new CursoHtml();
+		alumno = new Alumno(nombre, apellido, fechaNacimiento);
+
+		alumno.validarYAgregarDni(dni);
+		alumno.validarYAgregarEmail(email);
+		alumno.validarYAgregarTelefono(telefono);
+
+		cursoHtml.añadirAlumnos(alumno);
+
+		assertEquals(cantidadDeAlumnosEsperados, cursoHtml.cantidadAlumnos());
+	}
+	
+	@Test
+	public void queNoSePuedaAñadirUnAlumnoACursoJavaSinLaEdadNecesaria() {
+		final String nombre;
+		final String apellido;
+		final Integer dni;
+		final String email;
+		final String telefono;
+		final Integer cantidadDeAlumnosEsperados;
+		final LocalDate fechaNacimiento;
+		Alumno alumno;
+		CursoJava cursoJava;
+
+		cantidadDeAlumnosEsperados = 0;
+		nombre = "Sebastian";
+		apellido = "Villa";
+		dni = 40402705;
+		email = "ElAlumnoVilla@gmail.com";
+		telefono = "+541128341522";
+		fechaNacimiento = LocalDate.of(1896, 5, 19);
+		cursoJava = new CursoJava();
+		alumno = new Alumno(nombre, apellido, fechaNacimiento);
+
+		alumno.validarYAgregarDni(dni);
+		alumno.validarYAgregarEmail(email);
+		alumno.validarYAgregarTelefono(telefono);
+
+		cursoJava.añadirAlumnos(alumno);
+
+		assertEquals(cantidadDeAlumnosEsperados, cursoJava.cantidadAlumnos());
+	}
 	@Test
 	public void queSePuedaAñadirMasDeUnAlumnoEnCursoHTML() {
 		final LocalDate fechaNacimiento;
