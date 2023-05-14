@@ -2,6 +2,8 @@ package ar.edu.unlam.dominio.EmpresaDeCursos;
 
 public class CursoJava extends Curso {
 
+	private static final String CODIGO_PARA_JAVA = "JAVA";
+
 	private static final Integer CANTIDAD_CLASES_JAVA = 10;
 	private static final Integer PRECIO_JAVA = 5000;
 
@@ -12,6 +14,7 @@ public class CursoJava extends Curso {
 		super();
 		this.clases = CANTIDAD_CLASES_JAVA;
 		this.precio = PRECIO_JAVA;
+		this.codigoCurso = CODIGO_PARA_JAVA;
 	}
 
 	@Override

@@ -16,7 +16,7 @@ public class TestAlumno {
 		Integer dni = 32574859;
 		String email = "nicoFigal@gmail.com";
 		String telefono = "+541123345678";
-		Integer nota = 0;
+
 		LocalDate edad = LocalDate.of(1994, 04, 3);
 
 		alumno = new Alumno(nombre, apellido, edad);

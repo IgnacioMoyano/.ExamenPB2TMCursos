@@ -2,6 +2,8 @@ package ar.edu.unlam.dominio.EmpresaDeCursos;
 
 public class CursoCss extends Curso {
 
+	private static final String CODIGO_PARA_CSS = "CSS";
+
 	private static final Integer CANTIDAD_CLASES_CSS = 20;
 	private static final Integer PRECIO_CSS = 1000;
 
@@ -12,6 +14,7 @@ public class CursoCss extends Curso {
 		super();
 		this.clases = CANTIDAD_CLASES_CSS;
 		this.precio = PRECIO_CSS;
+		this.codigoCurso = CODIGO_PARA_CSS;
 	}
 
 	@Override

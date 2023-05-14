@@ -7,7 +7,7 @@ public abstract class Curso {
 	private ArrayList<Alumno> alumnos;
 	private Profesor profesor;
 	protected Integer precio;
-	private String codigoCurso;
+	protected String codigoCurso;
 	protected Integer clases;
 
 	public Curso() {

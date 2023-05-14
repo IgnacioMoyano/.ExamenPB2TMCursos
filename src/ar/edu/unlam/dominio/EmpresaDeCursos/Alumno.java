@@ -25,20 +25,20 @@ public class Alumno extends Persona {
 
 		if (this.getNotaPrimerParcial() >= 7 && this.getNotaSegundoParcial() >= 7
 				&& validarCantidadDeAsistencias(curso)) {
-			setCondicion(condicion.APROBADO);
+			setCondicion(CondicionNota.APROBADO);
 		}
 		if (this.getNotaPrimerParcial() < 4 || this.getNotaSegundoParcial() < 4
 				|| validarCantidadDeAsistencias(curso) == false) {
-			setCondicion(condicion.DESAPROBADO);
+			setCondicion(CondicionNota.DESAPROBADO);
 		}
 		if (this.getNotaPrimerParcial() >= 4 && this.getNotaSegundoParcial() >= 4 && this.getNotaSegundoParcial() < 7
 				&& validarCantidadDeAsistencias(curso)) {
-			setCondicion(condicion.FINAL);
+			setCondicion(CondicionNota.FINAL);
 		}
 
 		if (this.getNotaPrimerParcial() >= 4 && this.getNotaPrimerParcial() < 7 && this.getNotaSegundoParcial() >= 4
 				&& validarCantidadDeAsistencias(curso)) {
-			setCondicion(condicion.FINAL);
+			setCondicion(CondicionNota.FINAL);
 		}
 	}
 
