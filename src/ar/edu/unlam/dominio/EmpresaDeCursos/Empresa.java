@@ -1,6 +1,7 @@
 package ar.edu.unlam.dominio.EmpresaDeCursos;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
 public class Empresa {
 
@@ -8,14 +9,14 @@ public class Empresa {
 	private static final String CODIGO_PARA_CSS = "CSS";
 	private static final String CODIGO_PARA_HTML = "HTML";
 
-	ArrayList<Curso> cursosHtml;
-	ArrayList<Curso> cursosCss;
-	ArrayList<Curso> cursosJava;
+	LinkedHashSet<Curso> cursosHtml;
+	LinkedHashSet<Curso> cursosCss;
+	LinkedHashSet<Curso> cursosJava;
 
 	public Empresa() {
-		this.cursosHtml = new ArrayList<>();
-		this.cursosCss = new ArrayList<>();
-		this.cursosJava = new ArrayList<>();
+		this.cursosHtml = new LinkedHashSet<>();
+		this.cursosCss = new LinkedHashSet<>();
+		this.cursosJava = new LinkedHashSet<>();
 	}
 
 	public void agregarCurso(Curso curso) {
